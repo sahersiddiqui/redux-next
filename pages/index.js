@@ -1,16 +1,20 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import { initializeStore } from '../store'
-
+import Table from "../components/table"
+import Test from "../components/test"
 
 // posts will be populated at build time by getStaticProps()
 export default function Home(props) {
+
 	return (
-		<ul>
-			{props.initialReduxState.list.map((prop) => {
-				return <li>{prop.title}</li>
-			})}
-		</ul>
+		<>
+			<Table title={Test} new="sada">
+				<ul>
+					{props.initialReduxState.list.map((prop) => {
+						return <li>{prop.title}</li>
+					})}
+				</ul>
+			</Table>
+		</>
 	)
 }
 
